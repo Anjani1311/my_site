@@ -1,0 +1,51 @@
+{% extends 'auth/auth_base.html' %}
+{% load static %}
+{% block title %}signup{% endblock %}
+{% block body %}
+
+<div class="main-w3layouts wrapper">
+    <a href="/"><h1 class="w3-tag">Home</h1></a><br>
+    <h1>Registration Form</h1>
+    <div class="main-agileinfo">
+        <div class="agileits-top">
+            <form action="/signup/" method="post">
+                {% csrf_token %}
+                {{form.username}}
+                {{form.first_name}}
+                {{form.last_name}}
+                {{form.email}}
+                {{form.password1}}
+                {{form.password2}}
+                {{form.dept}}<br>
+                <div class="check">
+                    <label type="text" for="checkboxSuccess1">Student</label>
+                    <input type="checkbox" id="checkboxSuccess1" class="chk" name="is_student"><br>
+                    <label type="text" for="checkboxSuccess2">Teacher</label>
+                    <input type="checkbox" id="checkboxSuccess2" class="chk" name="is_teacher">
+                </div>
+
+                <input type="submit" value="SIGN UP">
+            </form>
+            <p>Don't have an Account? <a href="/login"> Login Now!</a></p>
+        </div>
+    </div>
+    <!-- copyright -->
+    <div class="colorlibcopy-agile">
+        <p>© 2018 Colorlib Signup Form. All rights reserved | Design by <a href="https://colorlib.com/"
+                target="_blank">Colorlib</a></p>
+    </div>
+    <!-- //copyright -->
+    <ul class="colorlib-bubbles">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</div>
+{% endblock %}

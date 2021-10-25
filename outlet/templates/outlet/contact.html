@@ -1,0 +1,105 @@
+{% extends "outlet/basic.html" %}
+{% block title%}title of outlet {% endblock %}
+
+{% block body%}
+{% load static %}
+
+
+<section class="section wb mt-4">
+    <div class="container">
+        {% if success %}
+        <div class="alert alert-info alert-dismissible fade show" role="alert">
+            <strong>Message :</strong>Thanks for posting your query....!!!
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div> <!-- alert end -->
+        {% endif %}
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="page-wrapper">
+                    <div class="row">
+                        <div class="col-lg-5">
+                            <h2>Who We Are</h2>
+                            <ul>
+                                <li>
+                                    <p><strong>College Address :</strong>Gargi Memorial Institute of Technology
+                                        Balarampur, Mouza Beralia,<br>
+                                        Baruipur, Kolkata - 700144</p>
+                                </li>
+                                <li>
+                                    <p><strong>City Office :</strong>3, Suren Tagore Road, Kolkata - 700 019</p>
+                                </li>
+                                <li>
+                                    <p><strong>Mobile :</strong> 8240192964 / 8100001990</p>
+                                </li>
+                                <li>
+                                    <p><strong>Admission :</strong>Mr. Binay Panda (VP,Mktg & Students Affair)- 83369
+                                        42309 /
+                                        <br>Mr. Pratik Kr Halder- 83369 42266 /
+                                        <br> Ms Moumita Saha Choudhury (8100001990/8240192964)
+                                    </p>
+                                </li>
+                                <li>
+                                    <p><strong>Placement :</strong>Mr. Soumojit Paul (TPO)- 82406 56223 / 83369 42296
+                                    </p>
+                                </li>
+                                <li>
+                                    <p><strong>HR :</strong>Poulomi Banerjee - 8336942273</p>
+                                </li>
+                                <li>
+                                    <p><strong>Email :</strong>admissiongmit@gmail.com</p>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-7 mt-4">
+                            <h4 style="padding: 5px; background-color: #086a81 ; color: white;">Contact Us</h4>
+                            <form action="/contact/" method="POST" class="form-wrapper bord">
+                                {% csrf_token %}
+                                <div class="form-group row">
+                                    <label for="inputName" class="col-sm-2 col-form-label">Name</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="inputName" name="name"
+                                            placeholder="Enter Your Name">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
+                                    <div class="col-sm-10">
+                                        <input type="email" class="form-control" id="inputEmail3" name="email"
+                                            placeholder="Email">
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label for="inputnum" class="col-sm-2 col-form-label">Phone </label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="mobile" name="mobile"
+                                            placeholder="Phone">
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label for="inputnum" class="col-sm-2 col-form-label">Message </label>
+                                    <div class="col-sm-10">
+                                        <textarea class="form-control" name="message"
+                                            placeholder="Your message"></textarea>
+                                    </div>
+                                </div>
+
+
+                                <div class="form-group row">
+                                    <div class="col-sm-10">
+                                        <button type="submit" class="btn btn-primary">Sign in</button>
+                                    </div>
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
+                </div><!-- end page-wrapper -->
+            </div><!-- end col -->
+        </div><!-- end row -->
+    </div><!-- end container -->
+</section>
+{% endblock %}

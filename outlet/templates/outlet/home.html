@@ -1,0 +1,67 @@
+{% extends "outlet/basic.html" %}
+{% block title%}title of outlet {% endblock %}
+{% block css%}
+.col-md-3
+{
+display: inline-block;
+margin-left:-4px;
+}
+.carousel-indicators .active {
+background-color: blue;
+}
+.col-md-3 img{
+width: 209px;
+height: 148px;
+}
+body .carousel-indicator li{
+background-color: blue;
+}
+body .carousel-indicators{
+bottom: 0;
+}
+body .carousel-control-prev-icon,
+body .carousel-control-next-icon{
+background-color: blue;
+}
+
+.carousel-control-prev,
+.carousel-control-next{
+top:auto;
+bottom:auto;
+}
+
+body .no-padding{
+padding-left: 0,
+padding-right: 0;
+}
+{% endblock %}
+
+
+{% block body%}
+{% load static %}
+
+<div class="container">
+
+
+
+      <div class="row my-4">
+
+        {% for news in All_news %}
+        <div class="col-12 border shadow-sm p-4 mb-4 bg-white">
+          <img src="{{news.image.url}}" alt="Nature" style="width:100%">
+          <h3 class="p-4"><b>{{news.Heading}}</b></h3>
+          <p class="p-4">{{news.description}}</p>
+        </div>
+        <hr>   <br>
+        {% endfor %}
+
+        <!-- END BLOG ENTRIES -->
+      </div>
+
+ 
+
+  </div>
+
+
+</div>
+{% endblock %}
